@@ -1,0 +1,13 @@
+{
+    "DATE": "DATE",
+    "KA-districts-Bengaluru Urban-total-confirmed": "BLR-CNF",
+    "KA-districts-Bengaluru Urban-total-deceased": "BLR-DEC",
+    "KA-districts-Bengaluru Urban-total-other": "BLR-OTH",
+    "KA-districts-Bengaluru Urban-total-recovered": "BLR-REC",
+    "KA-districts-Bengaluru Urban-total-tested": "BLR-TST",
+    "KA-total-confirmed": "KA-CNF",
+    "KA-total-deceased": "KA-DEC",
+    "KA-total-other": "KA-OTH",
+    "KA-total-recovered": "KA-REC",
+    "KA-total-tested": "KA-TST"
+}
