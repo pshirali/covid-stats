@@ -1,0 +1,12 @@
+The script 'covid-stats.py' contains code snippets
+copied from the internet, which may not follow the
+LICENSE applicable to the code in this repository.
+
+The code excluded from the license is demarcated
+using the term LICENSE-EXCLUSION along with the
+URL from where the code was obtained.
+
+All code except the code demarcated with within
+the LICENSE-EXCLUSION is covered by the LICENSE
+used by this repository (Apache 2.0)
+
