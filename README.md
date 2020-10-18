@@ -1,10 +1,12 @@
 # COVID-19 India JSON-to-CSV Stats Extractor
 
+
 ## The Datasource
 
 [COVID 19 India](https://covid19india.org) maintains code and structured-data for COVID-19 statistics, pulled from multiple sources across India with regular updates. This data is made available by them in both [JSON](https://api.covid19india.org/) and [CSV](https://api.covid19india.org/documentation/csv/) formats through Github.
 
 A comprehensive data-set among these, is the `data-all.json` ([https://api.covid19india.org/v4/data-all.json](https://api.covid19india.org/v4/data-all.json)) which contains district-wise and state-wise statistics for all districts and states in India, from 1st confirmed case (30th January 2020) till present day. The JSON scheme has `date [YYYY-MM-DD]` as the key, with stats in the `v4` ([https://api.covid19india.org/documentation/v4_data.html](https://api.covid19india.org/documentation/v4_data.html)) format as values.
+
 
 ## The `covid-stats.py` script
 
@@ -18,6 +20,19 @@ The script provides the ability to:
     * The _mapping_ allows you to then handpick metrics of interest, reorder them and supply custom column names for the CSV.
     * The _mapping_ can be stored on disk as a JSON.
 1. Use a _mapping_ file as a guide/configuration to extract metrics of interest and store it into a CSV.
+
+
+## Changelog
+
+#### 0.0.2
+
+1. Added version tracking in the code
+1. Switches '-o/--output' with '-x' now apply to output of both CSV as well as mapping JSON depending on context.
+1. In the mapping JSON, the custom column names used to be empty strings to allow custom names to be filled in. Now they are the same as the original column names, so, you can rename only those that you need.
+
+#### 0.0.1
+
+Initial release of the script
 
 ## License
 

@@ -34,15 +34,15 @@ import logging
 from datetime import date, timedelta
 
 
+__version__ = "0.0.2"
+
+
 INDIAN_STATE_CODES = [
     'IN',
     'AN', 'AP', 'AR', 'AS', 'BR', 'CH', 'CT', 'DL', 'DN', 'GA', 'GJ', 'HP',
     'HR', 'JH', 'JK', 'KA', 'KL', 'LA', 'MH', 'ML', 'MN', 'MP', 'MZ', 'NL',
     'OR', 'PB', 'PY', 'RJ', 'SK', 'TG', 'TN', 'TR', 'TT', 'UP', 'UT', 'WB'
 ]
-
-
-COVID_19_INDIA_JSON_URL = "https://api.covid19india.org/v4/data-all.json"
 
 
 logging.basicConfig(
@@ -170,11 +170,11 @@ if __name__ == "__main__":
     )
     ap.add_argument(
         "-o", "--output",
-        help="Write CSV to disk. Default name 'covid19-<stateCode>.csv'"
+        help="Set output file for CSV (optional) or mapping JSON (mandatory)."
     )
     ap.add_argument(
         "-x", "--overwrite", action="store_true",
-        help="Overwrite CSV if it already exists."
+        help="Overwrite output file if it exists."
     )
     ap.add_argument(
         "-s", "--state", required=True,
@@ -219,6 +219,11 @@ if __name__ == "__main__":
         exit(1)
 
     if not args.output:
+        if args.columns:
+            err("ERROR: The output file is mandatory when the '-c' switch")
+            err("       is in use. Please provide a filename to write the")
+            err("       mapping JSON content.")
+            exit(1)
         args.output = "covid19-{}.csv".format(args.state)
 
     if os.path.exists(args.output) and not args.overwrite:
@@ -246,8 +251,9 @@ if __name__ == "__main__":
             column_names.update(state_colnames)
 
     if args.columns:
-        print(json.dumps({k: "" for k in column_names},
-                         indent=4, sort_keys=True))
+        with open(args.output, 'w') as f:
+            f.write(json.dumps({k: k for k in column_names},
+                               indent=4, sort_keys=True))
         exit(0)
 
     mapping = {}
