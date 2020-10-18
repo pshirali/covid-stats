@@ -251,9 +251,11 @@ if __name__ == "__main__":
             column_names.update(state_colnames)
 
     if args.columns:
+        log("Writing Mapping JSON: {}".format(args.output))
         with open(args.output, 'w') as f:
             f.write(json.dumps({k: k for k in column_names},
                                indent=4, sort_keys=True))
+        log("Done.")
         exit(0)
 
     mapping = {}
@@ -266,7 +268,7 @@ if __name__ == "__main__":
             err("       '{}' and column names.".format(args.mapping))
             exit(1)
 
-    log("Writing output: {}".format(args.output))
+    log("Writing CSV data: {}".format(args.output))
     with open(args.output, 'w', newline='') as f:
         csv_w = csv.writer(f, delimiter=',', quotechar='"',
                            quoting=csv.QUOTE_ALL)
