@@ -19,10 +19,6 @@ The script provides the ability to:
     * The _mapping_ can be stored on disk as a JSON.
 1. Use a _mapping_ file as a guide/configuration to extract metrics of interest and store it into a CSV.
 
-## Tutorial
-
-The [TUTORIAL.md](TUTORIAL.md) covers all instructions on how to get started and how to use this script in detail.
-
 ## License
 
 [Apache 2.0 License](LICENSE) and [NOTICE](NOTICE.md)
