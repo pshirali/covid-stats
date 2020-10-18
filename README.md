@@ -26,11 +26,11 @@ The script provides the ability to:
 
 _NOTE: This section is verbose to help serve those who aren't familiar with Python 3, CLI or JSON. Advanced users may jump to sections of relevance directly_
 
-This script requires Python 3 installed on a system. You'll also require the script [covid-stats.py]() and the [data-all.json]() files downloaded into a common folder on your system.
+This script requires [Python 3](https://www.python.org/downloads/) installed on a system. You'll also require the script [covid-stats.py](https://raw.githubusercontent.com/pshirali/covid-stats/main/covid-stats.py) and the [data-all.json](https://api.covid19india.org/v4/data-all.json) files downloaded into a common folder on your system.
 
-If you are on Windows, you'll need to run `python3 covid-stats.py` from the Windows Command Prompt in the folder where the above files are placed.
+If you are on Windows, you'll need to run `python3 covid-stats.py` from the [Windows Command Prompt](https://www.youtube.com/watch?v=MBBWVgE0ewk) in the folder where the above files are placed.
 
-If you are on *nix (Linux, MacOS), you'll need to run `./covid-stats.py` from a Terminal. Remember to set execute permissions: `chmod +x ./covid-stats.py`
+If you are on *nix (Linux, MacOS), you'll need to run `./covid-stats.py` from a [Terminal](https://www.youtube.com/watch?v=SkB-eRCzWIU). Remember to set [execute permissions](https://www.youtube.com/watch?v=WWWsHdNKP5c): `chmod +x ./covid-stats.py`
 
 Instructions henceforth will use the *nix format (`./covid-stats.py`). Windows users; when you see this, use `python3 covid-stats.py`.
 
@@ -144,7 +144,7 @@ The mapping above will result in extraction of data `KA-Total` and `KA-Bengaluru
 
 The `-i` switch is used to supply the path to the `data-all.json` on your disk. By default, the script tries look for a `data-all.json` in your current working directly. If you have one, then you need not supply this switch. The recommended way to use this tool is to download the `data-all.json` ahead of time, place it alongside the script, and use the script locally.
 
-> An advanced option is to use `-n` to point the script to download the latest copy of `data-all.json` from the default COVID-19-India's URL. You can additionally supply a `-u` option to override the default URL (likely unnecessary). NOTE: This requires the `requests` library to be installed (`pip3 install requests`)
+> An advanced option is to use `-n` to point the script to download the latest copy of `data-all.json` from the default COVID-19-India's URL. You can additionally supply a `-u` option to override the default URL (likely unnecessary). NOTE: This requires the `requests` library to be [installed](https://www.youtube.com/watch?v=HdJywzSCGbc) (`pip3 install requests`)
 
 The `-o` switch is used to define the output file. The output is used for writing both the CSV file as well as the _mapping_ file. By default, the script avoids accidental rewrites, and quits if the output file already exists on disk. Use `-x` to allow overwriting.
 
